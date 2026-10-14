@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Know Your Schemes – Public welfare schemes in India</title>
+<style>
+:root{
+  --bg:#f3f6f1;--surface:#ffffff;--ink:#1d2a24;--muted:#56645d;--line:#d5ddd6;
+  --green:#1f5d46;--green-ink:#ffffff;--saffron:#e08a1e;--tint:#e4eee7;--focus:#0b57d0;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#121a16;--surface:#1a2520;--ink:#e8efea;--muted:#a3b1a9;--line:#2c3b34;--green:#6fc4a0;--green-ink:#0e1c16;--saffron:#f0a64a;--tint:#22332b;--focus:#8ab4f8}
+}
+:root[data-theme="dark"]{--bg:#121a16;--surface:#1a2520;--ink:#e8efea;--muted:#a3b1a9;--line:#2c3b34;--green:#6fc4a0;--green-ink:#0e1c16;--saffron:#f0a64a;--tint:#22332b;--focus:#8ab4f8}
+*{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:17px/1.55 "Source Sans 3","Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:0}
+a{color:var(--green)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:var(--surface)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;gap:12px}
+.brand{font-family:Georgia,serif;font-weight:700;font-size:1.15rem}
+.brand span{color:var(--saffron)}
+nav a{margin-left:18px;text-decoration:none;color:var(--ink);font-weight:600}
+nav a:hover{text-decoration:underline}
+.hero{padding:48px 0 32px}
+.hero h1{font-size:clamp(2rem,5.5vw,3.4rem);max-width:16ch}
+.hero p{max-width:56ch;color:var(--muted);font-size:1.1rem;margin:16px 0 24px}
+.search{display:flex;gap:8px;max-width:620px}
+.search input{flex:1;min-width:0;padding:14px 16px;font:inherit;border:2px solid var(--green);border-radius:8px;background:var(--surface);color:var(--ink)}
+.search button{padding:0 20px;font:inherit;font-weight:700;border:0;border-radius:8px;background:var(--green);color:var(--green-ink);cursor:pointer}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
+.chip{padding:8px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:inherit;font-size:.95rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--green);color:var(--green-ink);border-color:var(--green)}
+.count{color:var(--muted);margin:8px 0 16px;font-size:.95rem}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;padding-bottom:40px}
+.scheme{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--green);border-radius:6px;padding:18px}
+.scheme h3{font-size:1.2rem}
+.tag{display:inline-block;font-size:.85rem;color:var(--green);background:var(--tint);padding:2px 10px;border-radius:4px;margin-bottom:10px}
+.scheme p{margin:8px 0;color:var(--muted)}
+.scheme button.more{margin-top:6px;padding:0;border:0;background:none;color:var(--green);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline}
+.detail{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:.97rem}
+.detail.open{display:block}
+.detail dt{font-weight:700;margin-top:8px}
+.detail dd{margin:2px 0 0;color:var(--muted)}
+.empty{grid-column:1/-1;padding:24px;background:var(--surface);border:1px dashed var(--line);border-radius:6px}
+section.check{background:var(--tint);padding:40px 0}
+section.check h2{font-size:1.6rem;margin-bottom:6px}
+.check form,.check .row{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.check label{display:flex;flex-direction:column;font-weight:600;font-size:.95rem;gap:4px}
+.check select{padding:10px;font:inherit;border:1.5px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);min-width:170px}
+#result{margin-top:8px}
+#result li{margin:4px 0}
+section.how{padding:40px 0}
+section.how h2{font-size:1.6rem;margin-bottom:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;counter-reset:s;padding:0;list-style:none;margin:0}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px}
+.steps li::before{content:"Step " counter(s);display:block;font-weight:700;color:var(--saffron);margin-bottom:4px}
+footer{border-top:1px solid var(--line);padding:24px 0 32px;color:var(--muted);font-size:.92rem;background:var(--surface)}
+.help{font-weight:700;color:var(--ink)}
+@media (max-width:560px){nav{display:none}.search button{padding:0 14px}}
+.lang{display:flex;gap:6px}.lang .chip{padding:6px 12px}.top .wrap{flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand" data-i18n="brand"></div>
+  <nav aria-label="Main"><a href="#schemes" data-i18n="n1"></a><a href="#check" data-i18n="n2"></a><a href="#how" data-i18n="n3"></a></nav>
+  <div class="lang" role="group" aria-label="Language"><button class="chip" data-l="en">English</button><button class="chip" data-l="hi">हिन्दी</button><button class="chip" data-l="mr">मराठी</button></div>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <h1 data-i18n="h1"></h1>
+  <p data-i18n="hp"></p>
+  <form class="search" role="search" onsubmit="return false">
+    <input id="q" type="search" data-ph="ph" aria-label="Search" oninput="render()">
+    <button type="button" onclick="render()" data-i18n="sb"></button>
+  </form>
+</div></section>
+<section id="schemes"><div class="wrap">
+  <div class="filters" id="filters" role="group"></div>
+  <div class="count" id="count" aria-live="polite"></div>
+  <div class="list" id="list"></div>
+</div></section>
+<section class="check" id="check"><div class="wrap">
+  <h2 data-i18n="ch2"></h2>
+  <p data-i18n="cp"></p>
+  <div class="row">
+    <label><span data-i18n="q1"></span><select id="f-who"><option value="" data-i18n="sel"></option><option value="farmer" data-i18n="farmer"></option><option value="woman" data-i18n="woman"></option><option value="girl" data-i18n="girl"></option><option value="worker" data-i18n="worker"></option><option value="senior" data-i18n="senior"></option><option value="family" data-i18n="family"></option></select></label>
+    <label><span data-i18n="q2"></span><select id="f-inc"><option value="" data-i18n="sel"></option><option value="low" data-i18n="low"></option><option value="mid" data-i18n="mid"></option></select></label>
+    <label><span data-i18n="q3"></span><select id="f-bank"><option value="" data-i18n="sel"></option><option value="yes" data-i18n="yes"></option><option value="no" data-i18n="no"></option></select></label>
+  </div>
+  <button class="chip" style="background:var(--green);color:var(--green-ink);border-color:var(--green)" onclick="shortlist()" data-i18n="show"></button>
+  <ul id="result" aria-live="polite"></ul>
+</div></section>
+<section class="how" id="how"><div class="wrap">
+  <h2 data-i18n="hw"></h2>
+  <ol class="steps"><li data-i18n="s1"></li><li data-i18n="s2"></li><li data-i18n="s3"></li><li data-i18n="s4"></li></ol>
+</div></section>
+</main>
+<footer><div class="wrap"><p data-i18n="f1"></p><p data-i18n="f2"></p></div></footer>
+<script>
+var T={
+en:{brand:"Know Your Schemes",n1:"Schemes",n2:"Check eligibility",n3:"How to apply",h1:"Government help you may already qualify for",hp:"Search central government welfare schemes for farmers, women, workers, elders and families. Each entry says who can apply, what you get and what to carry.",ph:"Search by name or need, e.g. pension, health, loan",sb:"Search",all:"All",c1:"{n} scheme found",cn:"{n} schemes found",ec:"No scheme matches that search. Try a broader word such as health, pension or loan, or choose All.",more:"See details",less:"Hide details",lw:"Who can apply",lb:"What you get",ld:"Documents to carry",lp:"Where to apply",ch2:"Check which schemes fit you",cp:"Answer three questions for a quick shortlist. This is a guide, not a final decision. Official eligibility rules apply.",q1:"Who are you?",q2:"Household income",q3:"Own a bank account?",sel:"Select",farmer:"Farmer",woman:"Woman",girl:"Parent of a girl child",worker:"Worker / self-employed",senior:"Senior citizen",family:"Household in need",low:"Low / below poverty line",mid:"Middle",yes:"Yes",no:"No",show:"Show my shortlist",fill:"Answer all three questions to see your shortlist.",none:"No close match found. Browse all schemes above or ask at your nearest Common Service Centre.",hw:"How to apply",s1:"Pick a scheme and read its eligibility. Note the documents it asks for.",s2:"Keep your Aadhaar, bank passbook, mobile number and address proof ready.",s3:"Apply on the scheme's official portal, at a Common Service Centre, or at your bank or gram panchayat office.",s4:"Save your application number and track the status on the portal.",f1:"<span class='help'>Beware of agents who ask for money.</span> Applying for government schemes is free. Always use official .gov.in or .nic.in websites.",f2:"This site is an informational guide and not an official government website. Benefit amounts and rules change, so confirm details on the scheme's official portal before applying. Helplines: Ayushman Bharat 14555, Digital India helpline 1800-11-4000."},
+hi:{brand:"अपनी योजनाएँ जानें",n1:"योजनाएँ",n2:"पात्रता जाँचें",n3:"आवेदन कैसे करें",h1:"सरकारी मदद, जिसके आप शायद पहले से पात्र हैं",hp:"किसानों, महिलाओं, कामगारों, बुजुर्गों और परिवारों के लिए केंद्र सरकार की कल्याण योजनाएँ खोजें। हर योजना में बताया गया है कि कौन आवेदन कर सकता है, क्या मिलेगा और कौन-से दस्तावेज़ ले जाने हैं।",ph:"नाम या ज़रूरत से खोजें, जैसे पेंशन, स्वास्थ्य, ऋण",sb:"खोजें",all:"सभी",c1:"{n} योजना मिली",cn:"{n} योजनाएँ मिलीं",ec:"इस खोज से कोई योजना नहीं मिली। स्वास्थ्य, पेंशन या ऋण जैसा व्यापक शब्द आज़माएँ, या सभी चुनें।",more:"विवरण देखें",less:"विवरण छिपाएँ",lw:"कौन आवेदन कर सकता है",lb:"क्या मिलता है",ld:"साथ ले जाने के दस्तावेज़",lp:"कहाँ आवेदन करें",ch2:"जानें कौन-सी योजनाएँ आपके लिए हैं",cp:"जल्दी सूची पाने के लिए तीन सवालों के जवाब दें। यह मार्गदर्शन है, अंतिम निर्णय नहीं। आधिकारिक पात्रता नियम ही मान्य हैं।",q1:"आप कौन हैं?",q2:"परिवार की आय",q3:"क्या बैंक खाता है?",sel:"चुनें",farmer:"किसान",woman:"महिला",girl:"बेटी के माता-पिता",worker:"कामगार / स्वरोजगार",senior:"वरिष्ठ नागरिक",family:"ज़रूरतमंद परिवार",low:"कम / गरीबी रेखा से नीचे",mid:"मध्यम",yes:"हाँ",no:"नहीं",show:"मेरी सूची दिखाएँ",fill:"अपनी सूची देखने के लिए तीनों सवालों के जवाब दें।",none:"कोई करीबी योजना नहीं मिली। ऊपर सभी योजनाएँ देखें या नज़दीकी कॉमन सर्विस सेंटर में पूछें।",hw:"आवेदन कैसे करें",s1:"योजना चुनें और उसकी पात्रता पढ़ें। माँगे गए दस्तावेज़ नोट करें।",s2:"आधार, बैंक पासबुक, मोबाइल नंबर और पते का प्रमाण तैयार रखें।",s3:"योजना के आधिकारिक पोर्टल, कॉमन सर्विस सेंटर, अपने बैंक या ग्राम पंचायत कार्यालय में आवेदन करें।",s4:"आवेदन संख्या सुरक्षित रखें और पोर्टल पर स्थिति देखते रहें।",f1:"<span class='help'>पैसे माँगने वाले एजेंटों से सावधान रहें।</span> सरकारी योजनाओं के लिए आवेदन निःशुल्क है। हमेशा आधिकारिक .gov.in या .nic.in वेबसाइट का उपयोग करें।",f2:"यह साइट केवल जानकारी के लिए है, आधिकारिक सरकारी वेबसाइट नहीं। लाभ राशि और नियम बदलते रहते हैं, इसलिए आवेदन से पहले योजना के आधिकारिक पोर्टल पर पुष्टि करें। हेल्पलाइन: आयुष्मान भारत 14555, डिजिटल इंडिया 1800-11-4000।"},
+mr:{brand:"तुमच्या योजना जाणून घ्या",n1:"योजना",n2:"पात्रता तपासा",n3:"अर्ज कसा करावा",h1:"सरकारी मदत, ज्यासाठी तुम्ही कदाचित आधीच पात्र आहात",hp:"शेतकरी, महिला, कामगार, ज्येष्ठ नागरिक व कुटुंबांसाठी केंद्र सरकारच्या कल्याणकारी योजना शोधा. प्रत्येक योजनेत कोण अर्ज करू शकतो, काय मिळते आणि कोणती कागदपत्रे न्यावीत हे दिले आहे.",ph:"नाव किंवा गरजेनुसार शोधा, उदा. पेन्शन, आरोग्य, कर्ज",sb:"शोधा",all:"सर्व",c1:"{n} योजना सापडली",cn:"{n} योजना सापडल्या",ec:"या शोधाशी जुळणारी योजना नाही. आरोग्य, पेन्शन किंवा कर्ज यांसारखा व्यापक शब्द वापरा, किंवा सर्व निवडा.",more:"तपशील पहा",less:"तपशील लपवा",lw:"कोण अर्ज करू शकतो",lb:"काय मिळते",ld:"सोबत न्यायची कागदपत्रे",lp:"अर्ज कुठे करावा",ch2:"कोणत्या योजना तुम्हाला लागू आहेत ते तपासा",cp:"झटपट यादीसाठी तीन प्रश्नांची उत्तरे द्या. हे मार्गदर्शन आहे, अंतिम निर्णय नाही. अधिकृत पात्रता नियमच लागू आहेत.",q1:"तुम्ही कोण आहात?",q2:"कुटुंबाचे उत्पन्न",q3:"बँक खाते आहे का?",sel:"निवडा",farmer:"शेतकरी",woman:"महिला",girl:"मुलीचे पालक",worker:"कामगार / स्वयंरोजगार",senior:"ज्येष्ठ नागरिक",family:"गरजू कुटुंब",low:"कमी / दारिद्र्यरेषेखाली",mid:"मध्यम",yes:"होय",no:"नाही",show:"माझी यादी दाखवा",fill:"यादी पाहण्यासाठी तिन्ही प्रश्नांची उत्तरे द्या.",none:"जवळची योजना सापडली नाही. वरील सर्व योजना पहा किंवा जवळच्या कॉमन सर्व्हिस सेंटरमध्ये विचारा.",hw:"अर्ज कसा करावा",s1:"योजना निवडा व तिची पात्रता वाचा. मागितलेली कागदपत्रे नोंदवा.",s2:"आधार, बँक पासबुक, मोबाइल क्रमांक व पत्त्याचा पुरावा तयार ठेवा.",s3:"योजनेच्या अधिकृत पोर्टलवर, कॉमन सर्व्हिस सेंटरमध्ये, बँकेत किंवा ग्रामपंचायत कार्यालयात अर्ज करा.",s4:"अर्ज क्रमांक जपून ठेवा व पोर्टलवर स्थिती तपासत रहा.",f1:"<span class='help'>पैसे मागणाऱ्या एजंटांपासून सावध रहा.</span> सरकारी योजनांसाठी अर्ज मोफत आहे. नेहमी अधिकृत .gov.in किंवा .nic.in संकेतस्थळे वापरा.",f2:"हे संकेतस्थळ केवळ माहितीसाठी आहे, अधिकृत सरकारी संकेतस्थळ नाही. लाभाची रक्कम व नियम बदलतात, म्हणून अर्जापूर्वी योजनेच्या अधिकृत पोर्टलवर खात्री करा. हेल्पलाइन: आयुष्मान भारत 14555, डिजिटल इंडिया 1800-11-4000."}
+};
+var CT={Farmers:["Farmers","किसान","शेतकरी"],Health:["Health","स्वास्थ्य","आरोग्य"],Housing:["Housing","आवास","घरकुल"],Women:["Women","महिला","महिला"],Pension:["Pension","पेंशन","पेन्शन"],Banking:["Banking","बैंकिंग","बँकिंग"],Insurance:["Insurance","बीमा","विमा"],Employment:["Employment","रोजगार","रोजगार"],Loans:["Loans","ऋण","कर्ज"]};
+var D={aad:["Aadhaar","आधार","आधार"],bank:["Bank account","बैंक खाता","बँक खाते"],land:["Land records","भूमि अभिलेख","जमीन अभिलेख"],ration:["Ration card","राशन कार्ड","रेशन कार्ड"],card:["Ayushman card","आयुष्मान कार्ड","आयुष्मान कार्ड"],inc:["Income proof","आय प्रमाण","उत्पन्न पुरावा"],addr:["Address proof","पते का प्रमाण","पत्त्याचा पुरावा"],kyc:["KYC form","केवाईसी फॉर्म","केवायसी अर्ज"],birth:["Girl's birth certificate","बेटी का जन्म प्रमाणपत्र","मुलीचा जन्म दाखला"],id:["ID proof","पहचान प्रमाण","ओळखीचा पुरावा"],mob:["Mobile number","मोबाइल नंबर","मोबाइल क्रमांक"],job:["Job card","जॉब कार्ड","जॉब कार्ड"],age:["Age proof","आयु प्रमाण","वयाचा पुरावा"],bpl:["BPL proof","बीपीएल प्रमाण","बीपीएल पुरावा"],bp:["Business plan or proof","व्यवसाय योजना या प्रमाण","व्यवसाय आराखडा किंवा पुरावा"],stmt:["Bank statements","बैंक विवरण","बँक विवरण"]};
+var P={yourbank:["Your bank branch","आपकी बैंक शाखा","तुमची बँक शाखा"],postbank:["Post offices and authorised banks","डाकघर और अधिकृत बैंक","टपाल कार्यालये व अधिकृत बँका"],anybank:["Any bank branch or banking correspondent","कोई भी बैंक शाखा या बैंकिंग प्रतिनिधि","कोणतीही बँक शाखा किंवा बँकिंग प्रतिनिधी"],mudra:["Banks, NBFCs and micro-finance institutions","बैंक, एनबीएफसी और सूक्ष्म वित्त संस्थाएँ","बँका, एनबीएफसी व सूक्ष्म वित्त संस्था"],dswo:["Your district social welfare office","आपका जिला समाज कल्याण कार्यालय","तुमचे जिल्हा समाजकल्याण कार्यालय"]};
+var S=[
+{n:["PM-KISAN","पीएम-किसान"],c:"Farmers",who:["farmer"],d:["Direct income support for farmer families, paid in instalments into the bank account.","किसान परिवारों को सीधे बैंक खाते में आय सहायता।","शेतकरी कुटुंबांना थेट बँक खात्यात उत्पन्न सहाय्य."],e:["Landholding farmer families, subject to exclusions such as income-tax payers and institutional landholders.","भू-धारक किसान परिवार; आयकर दाता आदि कुछ श्रेणियाँ बाहर।","जमीनधारक शेतकरी कुटुंबे; आयकरदाते इत्यादी काही वर्ग वगळलेले."],b:["Rs 6,000 a year in three instalments.","साल में ₹6,000, तीन किस्तों में।","वर्षाला ₹6,000, तीन हप्त्यांत."],docs:["aad","land","bank"],p:"pmkisan.gov.in"},
+{n:["Ayushman Bharat PM-JAY","आयुष्मान भारत पीएम-जय"],c:"Health",who:["family"],low:1,d:["Cashless hospital treatment for eligible poor and vulnerable families.","पात्र गरीब और कमजोर परिवारों के लिए अस्पताल में कैशलेस इलाज।","पात्र गरीब व दुर्बल कुटुंबांसाठी रुग्णालयात कॅशलेस उपचार."],e:["Families identified through the SECC database and other listed categories.","SECC डेटाबेस और अन्य सूचीबद्ध श्रेणियों में चिह्नित परिवार।","SECC डेटाबेस व इतर सूचीबद्ध वर्गांतील कुटुंबे."],b:["Health cover up to Rs 5 lakh per family per year at empanelled hospitals.","सूचीबद्ध अस्पतालों में प्रति परिवार प्रति वर्ष ₹5 लाख तक का स्वास्थ्य कवर।","सूचीबद्ध रुग्णालयांत प्रति कुटुंब प्रति वर्ष ₹5 लाखांपर्यंत आरोग्य संरक्षण."],docs:["aad","ration","card"],p:"pmjay.gov.in"},
+{n:["PM Awas Yojana","प्रधानमंत्री आवास योजना"],c:"Housing",who:["family"],low:1,d:["Support to build or buy a pucca house for those without one.","बिना पक्के घर वालों को घर बनाने या खरीदने में सहायता।","पक्के घर नसलेल्यांना घर बांधण्यासाठी किंवा खरेदीसाठी मदत."],e:["Households without a pucca house, as per scheme income and category rules.","बिना पक्के घर वाले परिवार, योजना की आय व श्रेणी शर्तों के अनुसार।","पक्के घर नसलेली कुटुंबे, योजनेच्या उत्पन्न व वर्ग अटींनुसार."],b:["Financial assistance or interest subsidy on a home loan, depending on the component.","घटक के अनुसार आर्थिक सहायता या गृह ऋण पर ब्याज सब्सिडी।","घटकानुसार आर्थिक मदत किंवा गृहकर्जावर व्याज अनुदान."],docs:["aad","inc","bank","addr"],p:"pmaymis.gov.in"},
+{n:["PM Ujjwala Yojana","प्रधानमंत्री उज्ज्वला योजना"],c:"Women",who:["woman","family"],low:1,d:["Free LPG connection so households can stop cooking on firewood.","परिवार लकड़ी के चूल्हे से मुक्त हो सकें, इसके लिए मुफ्त एलपीजी कनेक्शन।","कुटुंबांना चुलीपासून मुक्ती मिळावी म्हणून मोफत एलपीजी जोडणी."],e:["Adult women from eligible poor households with no existing LPG connection.","पात्र गरीब परिवारों की वयस्क महिलाएँ, जिनके पास एलपीजी कनेक्शन नहीं है।","ज्यांच्याकडे एलपीजी जोडणी नाही अशा पात्र गरीब कुटुंबांतील प्रौढ महिला."],b:["Deposit-free LPG connection, with subsidy on refills for eligible users.","बिना जमानत राशि के एलपीजी कनेक्शन; पात्र उपभोक्ताओं को रिफिल पर सब्सिडी।","अनामत रकमेशिवाय एलपीजी जोडणी; पात्र वापरकर्त्यांना रिफिलवर अनुदान."],docs:["aad","ration","bank","kyc"],p:"pmuy.gov.in"},
+{n:["Sukanya Samriddhi Yojana","सुकन्या समृद्धि योजना"],c:"Women",who:["girl"],d:["Small savings account for a girl child's education and marriage expenses.","बेटी की शिक्षा और विवाह के खर्च के लिए छोटी बचत योजना।","मुलीच्या शिक्षण व लग्नखर्चासाठी लहान बचत खाते."],e:["Parents or guardians of a girl child below 10 years of age.","10 वर्ष से कम उम्र की बेटी के माता-पिता या अभिभावक।","10 वर्षांखालील मुलीचे पालक किंवा संरक्षक."],b:["Government-set interest rate and tax benefits, reviewed every quarter.","सरकार द्वारा तय ब्याज दर और कर लाभ, हर तिमाही समीक्षा।","सरकारने ठरवलेला व्याजदर व करसवलत, दर तिमाहीला आढावा."],docs:["birth","id","addr"],p:"postbank"},
+{n:["Atal Pension Yojana","अटल पेंशन योजना"],c:"Pension",who:["worker","senior"],bank:1,d:["Guaranteed monthly pension after age 60 for workers in the unorganised sector.","असंगठित क्षेत्र के कामगारों को 60 वर्ष के बाद तय मासिक पेंशन।","असंघटित क्षेत्रातील कामगारांना 60 वर्षांनंतर निश्चित मासिक पेन्शन."],e:["Indian citizens aged 18 to 40 with a savings bank account.","18 से 40 वर्ष के भारतीय नागरिक जिनका बचत बैंक खाता हो।","18 ते 40 वयोगटातील भारतीय नागरिक ज्यांचे बचत बँक खाते आहे."],b:["Fixed pension of Rs 1,000 to Rs 5,000 a month, based on your contribution.","आपके योगदान के अनुसार ₹1,000 से ₹5,000 मासिक पेंशन।","तुमच्या योगदानानुसार ₹1,000 ते ₹5,000 मासिक पेन्शन."],docs:["aad","bank","mob"],p:"yourbank"},
+{n:["PM Jan Dhan Yojana","प्रधानमंत्री जन धन योजना"],c:"Banking",who:["worker","family","farmer","woman"],nobank:1,d:["Zero-balance bank account with a RuPay debit card and accident insurance.","RuPay डेबिट कार्ड और दुर्घटना बीमा के साथ शून्य शेष वाला बैंक खाता।","RuPay डेबिट कार्ड व अपघात विम्यासह शून्य शिल्लक बँक खाते."],e:["Any Indian citizen without a bank account.","कोई भी भारतीय नागरिक जिसका बैंक खाता नहीं है।","बँक खाते नसलेला कोणताही भारतीय नागरिक."],b:["Basic savings account, RuPay card, built-in accident cover and overdraft facility after conditions.","बुनियादी बचत खाता, RuPay कार्ड, दुर्घटना बीमा और शर्तों के बाद ओवरड्राफ्ट सुविधा।","मूलभूत बचत खाते, RuPay कार्ड, अपघात विमा व अटींनंतर ओव्हरड्राफ्ट सुविधा."],docs:["aad","id"],p:"anybank"},
+{n:["PM Suraksha Bima Yojana","प्रधानमंत्री सुरक्षा बीमा योजना"],c:"Insurance",who:["worker","farmer","woman","family"],bank:1,d:["Low-cost accident insurance renewed every year.","हर साल नवीनीकरण होने वाला कम खर्च का दुर्घटना बीमा।","दरवर्षी नूतनीकरण होणारा कमी खर्चाचा अपघात विमा."],e:["Bank account holders aged 18 to 70.","18 से 70 वर्ष के बैंक खाताधारक।","18 ते 70 वयोगटातील बँक खातेदार."],b:["Cover of Rs 2 lakh for accidental death or full disability, Rs 1 lakh for partial disability.","दुर्घटना में मृत्यु या पूर्ण विकलांगता पर ₹2 लाख, आंशिक विकलांगता पर ₹1 लाख।","अपघाती मृत्यू किंवा पूर्ण अपंगत्वास ₹2 लाख, अंशतः अपंगत्वास ₹1 लाख."],docs:["aad","bank"],p:"yourbank"},
+{n:["MGNREGA","मनरेगा"],c:"Employment",who:["worker","family"],low:1,d:["Legal right to unskilled wage work in rural areas.","ग्रामीण क्षेत्र में अकुशल मजदूरी का कानूनी अधिकार।","ग्रामीण भागात अकुशल मजुरीचा कायदेशीर हक्क."],e:["Adult members of rural households willing to do manual work.","शारीरिक श्रम करने को तैयार ग्रामीण परिवारों के वयस्क सदस्य।","अंगमेहनतीचे काम करण्यास तयार ग्रामीण कुटुंबांतील प्रौढ सदस्य."],b:["Up to 100 days of wage employment per household per year.","प्रति परिवार प्रति वर्ष 100 दिन तक मजदूरी वाला रोजगार।","प्रति कुटुंब प्रति वर्ष 100 दिवसांपर्यंत मजुरीचा रोजगार."],docs:["job","bank"],p:"nrega.nic.in"},
+{n:["PM MUDRA Yojana","प्रधानमंत्री मुद्रा योजना"],c:"Loans",who:["worker","woman"],d:["Collateral-free loans for small and micro businesses.","छोटे और सूक्ष्म व्यवसायों के लिए बिना जमानत ऋण।","लघू व सूक्ष्म व्यवसायांसाठी विनातारण कर्ज."],e:["Non-farm small business owners and entrepreneurs.","गैर-कृषि छोटे व्यवसायी और उद्यमी।","बिगर-शेती लघुव्यावसायिक व उद्योजक."],b:["Loans in Shishu, Kishor and Tarun categories, up to Rs 10 lakh.","शिशु, किशोर और तरुण श्रेणी में ₹10 लाख तक का ऋण।","शिशू, किशोर व तरुण श्रेणीत ₹10 लाखांपर्यंत कर्ज."],docs:["id","addr","bp","stmt"],p:"mudra"},
+{n:["PM Vishwakarma","पीएम विश्वकर्मा"],c:"Employment",who:["worker"],d:["Skills, tools and credit support for traditional artisans and craftspeople.","पारंपरिक कारीगरों और शिल्पकारों के लिए कौशल, औज़ार और ऋण सहायता।","पारंपरिक कारागीर व शिल्पकारांसाठी कौशल्य, अवजारे व कर्ज सहाय्य."],e:["Artisans in listed trades who work with their hands and tools.","सूचीबद्ध व्यवसायों में हाथ और औज़ारों से काम करने वाले कारीगर।","सूचीबद्ध व्यवसायांत हात व अवजारांनी काम करणारे कारागीर."],b:["Recognition, skill training with stipend, toolkit incentive and low-interest credit.","मान्यता, वजीफे के साथ कौशल प्रशिक्षण, टूलकिट प्रोत्साहन और कम ब्याज पर ऋण।","मान्यता, विद्यावेतनासह कौशल्य प्रशिक्षण, टूलकिट प्रोत्साहन व कमी व्याजाचे कर्ज."],docs:["aad","mob","bank"],p:"pmvishwakarma.gov.in"},
+{n:["National Social Assistance Programme","राष्ट्रीय सामाजिक सहायता कार्यक्रम"],c:"Pension",who:["senior","woman"],low:1,d:["Monthly pensions for elderly people, widows and persons with disabilities from poor households.","गरीब परिवारों के बुजुर्गों, विधवाओं और दिव्यांगजनों के लिए मासिक पेंशन।","गरीब कुटुंबांतील वृद्ध, विधवा व दिव्यांगांसाठी मासिक पेन्शन."],e:["Below-poverty-line persons in the eligible age or category. State rules vary.","पात्र आयु या श्रेणी के गरीबी रेखा से नीचे के व्यक्ति; राज्य नियम अलग हो सकते हैं।","पात्र वय किंवा वर्गातील दारिद्र्यरेषेखालील व्यक्ती; राज्यानुसार नियम वेगळे असू शकतात."],b:["Monthly pension. The central share is topped up by many states.","मासिक पेंशन; कई राज्य केंद्र का हिस्सा बढ़ाकर देते हैं।","मासिक पेन्शन; अनेक राज्ये केंद्राच्या वाट्यात भर घालतात."],docs:["age","bpl","aad","bank"],p:"dswo"}
+];
+var L=(function(){try{return localStorage.getItem("lang")||"en"}catch(e){return "en"}})(),I={en:0,hi:1,mr:2},cat="All",open={};
+function t(k){return T[L][k]}
+function esc(x){return String(x).replace(/[&<>"]/g,function(m){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]})}
+function pick(a){return a[I[L]]}
+function nm(s){return s.n[L==="en"?0:1]}
+function apply(){
+  document.documentElement.lang=L;
+  [].forEach.call(document.querySelectorAll("[data-i18n]"),function(e){e.innerHTML=t(e.getAttribute("data-i18n"))});
+  [].forEach.call(document.querySelectorAll("[data-ph]"),function(e){e.placeholder=t(e.getAttribute("data-ph"))});
+  [].forEach.call(document.querySelectorAll("[data-l]"),function(b){b.setAttribute("aria-pressed",b.getAttribute("data-l")===L)});
+  document.title=t("brand");
+  document.getElementById("result").innerHTML="";
+  chips();render();
+}
+function chips(){
+  var F=document.getElementById("filters");F.innerHTML="";
+  F.setAttribute("aria-label",t("all"));
+  ["All"].concat(Object.keys(CT)).forEach(function(c){
+    var b=document.createElement("button");b.className="chip";b.textContent=c==="All"?t("all"):pick(CT[c]);b.setAttribute("aria-pressed",c===cat);
+    b.onclick=function(){cat=c;chips();render()};F.appendChild(b)});
+}
+function render(){
+  var q=document.getElementById("q").value.toLowerCase().trim();
+  var r=S.filter(function(s){return(cat==="All"||s.c===cat)&&(!q||(s.n.join(" ")+" "+pick(CT[s.c])+" "+pick(s.d)+" "+pick(s.b)).toLowerCase().indexOf(q)>-1)});
+  document.getElementById("count").textContent=t(r.length===1?"c1":"cn").replace("{n}",r.length);
+  var E=document.getElementById("list");
+  if(!r.length){E.innerHTML='<div class="empty">'+esc(t("ec"))+'</div>';return}
+  E.innerHTML=r.map(function(s){var i=S.indexOf(s),o=open[i];
+    var docs=s.docs.map(function(k){return pick(D[k])}).join(", "),pl=P[s.p]?pick(P[s.p]):s.p;
+    return '<article class="scheme"><span class="tag">'+esc(pick(CT[s.c]))+'</span><h3>'+esc(nm(s))+'</h3><p>'+esc(pick(s.d))+'</p><button class="more" aria-expanded="'+!!o+'" aria-controls="d'+i+'" onclick="tog('+i+')">'+esc(t(o?"less":"more"))+'</button><dl class="detail'+(o?' open':'')+'" id="d'+i+'"><dt>'+esc(t("lw"))+'</dt><dd>'+esc(pick(s.e))+'</dd><dt>'+esc(t("lb"))+'</dt><dd>'+esc(pick(s.b))+'</dd><dt>'+esc(t("ld"))+'</dt><dd>'+esc(docs)+'</dd><dt>'+esc(t("lp"))+'</dt><dd>'+esc(pl)+'</dd></dl></article>'}).join("");
+}
+function tog(i){open[i]=!open[i];render()}
+function shortlist(){
+  var w=document.getElementById("f-who").value,inc=document.getElementById("f-inc").value,bk=document.getElementById("f-bank").value,R=document.getElementById("result");
+  if(!w||!inc||!bk){R.innerHTML="<li>"+esc(t("fill"))+"</li>";return}
+  var m=S.filter(function(s){
+    if(s.who.indexOf(w)<0)return false;
+    if(s.low&&inc!=="low")return false;
+    if(s.bank&&bk!=="yes")return false;
+    if(s.nobank&&bk!=="no")return false;
+    return true});
+  R.innerHTML=m.length?m.map(function(s){return "<li><strong>"+esc(nm(s))+"</strong>: "+esc(pick(s.d))+"</li>"}).join(""):"<li>"+esc(t("none"))+"</li>";
+}
+[].forEach.call(document.querySelectorAll("[data-l]"),function(b){b.onclick=function(){L=b.getAttribute("data-l");try{localStorage.setItem("lang",L)}catch(e){}apply()}});
+apply();
+</script>
+</body>
+</html>
